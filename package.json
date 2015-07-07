@@ -12,11 +12,13 @@
     "url": "git://github.com/entity-js/ejs-database.git"
   },
   "scripts": {
-    "test": "mocha ./tests/"
+    "test": "mocha ./tests/",
+    "eslint": "eslint index.js ./lib ./tests",
+    "jshint": "jshint index.js ./lib ./tests"
   },
   "dependencies": {
-    "ejs-merge": "git://github.com/entity-js/ejs-merge.git#0.0.1",
-    "ejs-t": "git://github.com/entity-js/ejs-t.git#0.0.1",
+    "ejs-merge": "git://github.com/entity-js/ejs-merge.git#0.0.2",
+    "ejs-t": "git://github.com/entity-js/ejs-t.git#0.0.2",
     "mongojs": "^0.18.2"
   }
 }

@@ -12,15 +12,15 @@
  */
 
 var async = require('async'),
-    test = require('unit.js');
+    test = require('unit.js'),
+    Connection = require('../lib/connection'),
+    EUndefinedConnection = require('../lib/errors/EUndefinedConnection');
+
+var databases;
 
 describe('ejs/databases', function () {
 
   'use strict';
-
-  var databases,
-      Connection = require('../lib/connection'),
-      EUndefinedConnection = require('../lib/errors/EUndefinedConnection');
 
   beforeEach(function () {
 
@@ -30,8 +30,7 @@ describe('ejs/databases', function () {
 
   afterEach(function (done) {
 
-    var name = require.resolve('../lib');
-    delete require.cache[name];
+    delete require.cache[require.resolve('../lib')];
 
     var queue = [];
 
